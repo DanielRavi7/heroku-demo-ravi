@@ -19,7 +19,7 @@ def predict():
     print('no')
         
     if request.method == 'POST':
-        # print('if ')
+       
 
         TYPE  = str(request.form['TYPE_'])
         print('gttt')
@@ -49,7 +49,7 @@ def predict():
        TotalArea, CARPETAREA, CARPARKING, FACING, FLOORNO,
        LOCATLITY,STATE ]]))
         output=np.exp(prediction)
-        #output=round(prediction[0],1)
+        output=round(output[0],1)
         if output<0:
             return render_template('house.html',prediction="Sorry you cannot sell this House")
         else:
